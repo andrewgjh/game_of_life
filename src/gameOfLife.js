@@ -28,8 +28,8 @@ function populateGrid(grid, gridString) {
 function countNeighbours(i, j, arr) {
   let counter = 0;
 
-  for (x = i - 1; x <= i + 1; x++) {
-    for (y = j - 1; y <= j + 1; y++) {
+  for (let x = i - 1; x <= i + 1; x++) {
+    for (let y = j - 1; y <= j + 1; y++) {
       if ((i === x && j === y) || x < 0 || y < 0 || !arr[x][y]) {
         continue;
       }
@@ -43,8 +43,8 @@ function nextGen(arr) {
   if (arr.length < 1) return;
   const nextGenArr = createGrid(arr.length, arr[0].length);
 
-  for (i = 0; i < arr.length - 1; i++) {
-    for (j = 0; j < arr[0].length; j++) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    for (let j = 0; j < arr[0].length; j++) {
       const aliveNeighbours = countNeighbours(i, j, arr);
       const currentState = arr[i][j];
       if (currentState === 1) {
@@ -90,7 +90,7 @@ function draw(grid) {
 }
 
 async function gameOfLife(x, y, loopTimes) {
-  counter = 0;
+  let counter = 0;
   const grid = createGrid(x, y);
   const gridState = randomlifeMap(x * y);
   console.log(gridState);
@@ -106,4 +106,6 @@ async function gameOfLife(x, y, loopTimes) {
   }
 }
 
-gameOfLife(50, 60, 100);
+const gameFunctions = { createGrid };
+
+export default gameFunctions;

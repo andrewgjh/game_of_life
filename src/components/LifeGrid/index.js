@@ -1,27 +1,15 @@
 import "./life_grid.css";
+import gameFunctions from "../../gameOfLife";
 
 const LifeGrid = ({ width, height }) => {
-  function createGrid(x, y) {
-    const grid = [];
-    for (let idx = 0; idx < x; idx++) {
-      grid.push([]);
-    }
-    for (let i = 0; i < grid.length; i++) {
-      for (let index = 0; index < y; index++) {
-        grid[i].push("X");
-      }
-    }
-    return grid;
-  }
+  const { createGrid } = gameFunctions;
   const newGrid = createGrid(height, width);
   return (
-    <div>
+    <div className="grid-container">
       {newGrid.map((row, idx) => (
-        <div key={`row-${idx}`}>
+        <div key={`row-${idx}`} className="row-container">
           {row.map((column, index) => (
-            <span class="gol-cell" key={`column-${index}`}>
-          0
-            </span>
+            <div className="gol-cell" key={`column-${index}`}></div>
           ))}
         </div>
       ))}

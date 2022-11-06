@@ -7,9 +7,7 @@ import LifeGrid from "./components/LifeGrid";
 function App() {
   const runGameOfLife = e => {
     e.preventDefault();
-    setShowGrid(true);
   };
-  const [showGrid, setShowGrid] = useState(false);
   const [width, setWidth] = useState(5);
   const [height, setHeight] = useState(5);
 
@@ -23,7 +21,7 @@ function App() {
         setWidth={setWidth}
         setHeight={setHeight}
       />
-      {showGrid && <LifeGrid width={width} height={height} />}
+      <LifeGrid width={width} height={height} />
     </div>
   );
 }
