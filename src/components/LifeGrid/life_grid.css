@@ -1,0 +1,7 @@
+.grid-container {
+  display: flex;
+}
+
+.gol-cell{
+  border: 1px solid black;
+}
