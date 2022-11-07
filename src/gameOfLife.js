@@ -1,4 +1,4 @@
-function createGrid(x, y) {
+function createGrid(x = 5, y = 5) {
   const grid = [];
   for (let idx = 0; idx < x; idx++) {
     grid.push([]);
@@ -12,17 +12,17 @@ function createGrid(x, y) {
 }
 
 function populateGrid(grid, gridString) {
-  const newGrid = createGrid(grid.length, grid[0].length);
+  const populatedGrid = createGrid(grid.length, grid[0].length);
 
   for (let index = 0; index < gridString.length; index++) {
     const element = gridString[index];
     const x = Math.floor(index / grid[0].length);
     const y = Math.floor(index % grid[0].length);
     if (element === "*") {
-      newGrid[x][y] = 1;
+      populatedGrid[x][y] = 1;
     }
   }
-  return newGrid;
+  return populatedGrid;
 }
 
 function countNeighbours(i, j, arr) {
@@ -74,6 +74,7 @@ function randomlifeMap(squares) {
   }
   return mapString;
 }
+
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -93,19 +94,24 @@ async function gameOfLife(x, y, loopTimes) {
   let counter = 0;
   const grid = createGrid(x, y);
   const gridState = randomlifeMap(x * y);
-  console.log(gridState);
   let startGrid = populateGrid(grid, gridState);
 
-  draw(startGrid);
+  // draw(startGrid);
   while (counter < loopTimes) {
-    console.clear();
+    // console.clear();
     startGrid = nextGen(startGrid);
-    draw(startGrid);
+    // draw(startGrid);
     await sleep(100);
     counter++;
   }
 }
 
-const gameFunctions = { createGrid };
+const gameFunctions = {
+  createGrid,
+  populateGrid,
+  randomlifeMap,
+  sleep,
+  nextGen,
+};
 
 export default gameFunctions;

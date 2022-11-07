@@ -1,10 +1,15 @@
 import { useState } from "react";
 
-const VariablesForm = ({ runSim, width, height, setHeight, setWidth }) => {
-  const [generations, setGenerations] = useState(20);
-
+const VariablesForm = ({
+  width,
+  height,
+  setHeight,
+  setWidth,
+  generations,
+  setGenerations,
+}) => {
   return (
-    <form onSubmit={runSim}>
+    <form>
       <label>
         Grid Width:{" "}
         <input
@@ -38,8 +43,6 @@ const VariablesForm = ({ runSim, width, height, setHeight, setWidth }) => {
           }}
         ></input>
       </label>
-
-      <button type="submit">Run Sim</button>
     </form>
   );
 };

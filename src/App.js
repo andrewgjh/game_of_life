@@ -10,6 +10,7 @@ function App() {
   };
   const [width, setWidth] = useState(5);
   const [height, setHeight] = useState(5);
+  const [generations, setGenerations] = useState(20);
 
   return (
     <div className="App">
@@ -20,8 +21,10 @@ function App() {
         height={height}
         setWidth={setWidth}
         setHeight={setHeight}
+        generations={generations}
+        setGenerations={setGenerations}
       />
-      <LifeGrid width={width} height={height} />
+      <LifeGrid width={width} height={height} generations={generations} />
     </div>
   );
 }
