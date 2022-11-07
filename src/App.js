@@ -11,10 +11,14 @@ function App() {
   const [width, setWidth] = useState(5);
   const [height, setHeight] = useState(5);
   const [generations, setGenerations] = useState(20);
+  const [inhabitants, setInhabitants] = useState("🙂");
 
   return (
     <div className="App">
-      <h1>Conway's Game of Life</h1>
+      <h1>
+        Conway's Game of{" "}
+        {inhabitants === "💃" || inhabitants === "🕺" ? "Dance" : "Life"}
+      </h1>
       <VariablesForm
         runSim={runGameOfLife}
         width={width}
@@ -23,8 +27,15 @@ function App() {
         setHeight={setHeight}
         generations={generations}
         setGenerations={setGenerations}
+        inhabitants={inhabitants}
+        setInhabitants={setInhabitants}
       />
-      <LifeGrid width={width} height={height} generations={generations} />
+      <LifeGrid
+        width={width}
+        height={height}
+        generations={generations}
+        inhabitants={inhabitants}
+      />
     </div>
   );
 }

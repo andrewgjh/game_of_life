@@ -12,6 +12,7 @@ function createGrid(x = 5, y = 5) {
 }
 
 function populateGrid(grid, gridString) {
+  if (grid.length < 0) return;
   const populatedGrid = createGrid(grid.length, grid[0].length);
 
   for (let index = 0; index < gridString.length; index++) {
@@ -106,12 +107,16 @@ async function gameOfLife(x, y, loopTimes) {
   }
 }
 
+const resetGrid = (height, width) =>
+  populateGrid(
+    createGrid(height || 5, width || 5),
+    randomlifeMap(height * width || 25)
+  );
+
 const gameFunctions = {
-  createGrid,
-  populateGrid,
-  randomlifeMap,
   sleep,
   nextGen,
+  resetGrid,
 };
 
 export default gameFunctions;

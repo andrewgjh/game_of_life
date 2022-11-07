@@ -13,8 +13,8 @@
   display: inline;
   width: 2em;
   height: 2em;
-  background-color: lightblue;
-  border: 1px solid grey;
+  background-color: #DEF5E5;
+  border: 1px solid #8EC3B0;
 }
 
 .cell-life{
