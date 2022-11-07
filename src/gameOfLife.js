@@ -11,6 +11,19 @@ function createGrid(x = 5, y = 5) {
   return grid;
 }
 
+function gridStringify(gridArr) {
+  return gridArr
+    .map(row => {
+      return row
+        .map(cell => {
+          if (cell) return "*";
+          return ".";
+        })
+        .join("");
+    })
+    .join("");
+}
+
 function populateGrid(grid, gridString) {
   if (grid.length < 0) return;
   const populatedGrid = createGrid(grid.length, grid[0].length);
@@ -117,6 +130,9 @@ const gameFunctions = {
   sleep,
   nextGen,
   resetGrid,
+  gridStringify,
+  populateGrid,
+  createGrid,
 };
 
 export default gameFunctions;

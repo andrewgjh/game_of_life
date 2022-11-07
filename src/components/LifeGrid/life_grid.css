@@ -3,6 +3,10 @@
 .grid-container {
   margin: 2em;
   overflow: scroll;
+  border: 1px solid #557153;
+  height: 80vh;
+  border-radius: 5px;
+  box-shadow: 10px 10px 8px #888888;;
 }
 .row-container{
   display:flex;
@@ -14,7 +18,10 @@
   width: 2em;
   height: 2em;
   background-color: #DEF5E5;
-  border: 1px solid #8EC3B0;
+  border: 1px dotted #8EC3B0;
+}
+.gol-cell:hover {
+  background-color: #BCEAD5;
 }
 
 .cell-life{

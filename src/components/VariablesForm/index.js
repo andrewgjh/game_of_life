@@ -3,8 +3,7 @@ const VariablesForm = ({
   height,
   setHeight,
   setWidth,
-  generations,
-  setGenerations,
+
   inhabitants,
   setInhabitants,
 }) => {
@@ -34,17 +33,7 @@ const VariablesForm = ({
           }}
         ></input>
       </label>
-      <label>
-        Number Of Generations:{" "}
-        <input
-          type="number"
-          min="20"
-          value={generations}
-          onChange={e => {
-            setGenerations(e.target.value);
-          }}
-        ></input>
-      </label>
+
       <label>
         Inhabitants:{" "}
         <select
@@ -57,6 +46,9 @@ const VariablesForm = ({
           <option value="💃">💃</option>
           <option value="🕺">🕺</option>
           <option value="👽">👽</option>
+          <option value="🌲">🌲</option>
+          <option value="🐝">🐝</option>
+          <option value="🦋">🦋</option>
         </select>
       </label>
     </form>
